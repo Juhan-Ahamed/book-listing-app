@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wishlist</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <a href="wishlist.html">Wishlist</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main>
+    <h1>Your Wishlist</h1>
+    <div id="wishlist" class="book-grid"></div>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script>
+    function displayWishlist() {
+      const wishlistElement = document.getElementById('wishlist');
+      const wishlistBooks = booksData.filter(book => wishlist.includes(book.id));
+
+      wishlistElement.innerHTML = wishlistBooks
+        .map(book => `
+      <div class="book-item">
+        <img src="${book.formats['image/jpeg'] || 'placeholder.jpg'}" alt="${book.title}">
+        <h3>${book.title}</h3>
+        <p>By: ${book.authors.map(author => author.name).join(', ')}</p>
+      </div>
+    `)
+        .join('');
+    }
+
+
+    displayWishlist();
+
+  </script>
+</body>
+
+</html>

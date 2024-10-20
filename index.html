@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Listing</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <a href="wishlist.html">Wishlist</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
+
+  <main>
+    <div class="header">
+      <h1>Book List</h1>
+      <input type="text" id="search" class="search" placeholder="Search by title...">
+      <select id="genre" class="filter">
+        <option value="">Filter by Genre</option>
+      </select>
+    </div>
+
+    <div id="book-list" class="book-grid"></div>
+    <div id="pagination" class="pagination">
+      <button id="prev" disabled>Previous</button>
+      <span></span>
+      <button id="next">Next</button>
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
